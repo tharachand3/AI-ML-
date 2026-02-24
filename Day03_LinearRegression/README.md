@@ -1,112 +1,72 @@
-📌 Quick Revision Notes – Linear Regression
-🔹 Axis in Pandas
+## 📌 Quick Revision Notes – Linear Regression
 
-axis = 0 → Rows
+### 🔹 Axis in Pandas
+- **axis = 0 → Rows**
+- **axis = 1 → Columns**
 
-axis = 1 → Columns
+### 🔹 Train and Test Split Ratio
+- If dataset is **small → 80 / 20**
+- If dataset is **large → 90 / 10**
 
-🔹 Train and Test Split Ratio
+### 🔹 Overfitting
+- **Training error ↓**
+- **Testing error ↑**
+- Model memorizes training data but fails on new data
 
-If dataset is small → use 80 / 20
+### 🔹 Important Rule for train_test_split()
+It always returns in this exact order:
+- **X_train**
+- **X_test**
+- **y_train**
+- **y_test**
+⚠ **Never change the left-side order while assigning**
 
-If dataset is large → 90 / 10 is fine
+### 🔹 random_state
+- Fixes randomness
+- Same training and testing rows every time
+- Gives stable comparison
 
-🔹 Overfitting
+## 📊 Evaluation Metrics
 
-Training error ↓
+### 🔹 MAE (Mean Absolute Error)
+- **Average mistake**
+- Same unit as output
 
-Testing error ↑
+### 🔹 MSE (Mean Squared Error)
+- **Squared punishment**
+- Large errors heavily penalized
 
-Model memorizes training data but fails on new data.
+### 🔹 R² Score
+- **Overall fit quality**
+- Measures how much variation model explains
 
-🔹 Important Rule for train_test_split()
+**R² Meaning:**
+- **1 → Perfect**
+- **0 → Useless**
+- **Negative → Worse than average**
 
-It always returns in this order:
+Example:  
+If **R² = 0.85 → Model explains 85% of variation in data**  
+Higher **R² → Better model fit**
 
-X_train
+### 🔹 Adjusted R²
+- Prevents fake improvement
+- Penalizes unnecessary features  
+If **R² increases but Adjusted R² drops → New feature is useless**
 
-X_test
+## 📈 Other Important Regression Metrics
+- **MAE → Average error**
+- **MSE → Squared punishment**
+- **RMSE → Practical error measure**
+- **R² → Model strength**
+- **Adjusted R² → Fair model strength**
+- **MAPE → Percentage error**
+- **Median Absolute Error → Robust to outliers**
 
-y_train
+## 📂 Dataset Handling
 
-y_test
-
-⚠ Never change the left-side order while assigning.
-
-🔹 random_state
-
-Fixes randomness
-
-Same training and testing rows every time
-
-Gives stable comparison
-
-📊 Evaluation Metrics
-🔹 MAE (Mean Absolute Error)
-
-Average mistake
-
-Same unit as output
-
-🔹 MSE (Mean Squared Error)
-
-Squared punishment
-
-Large errors heavily penalized
-
-🔹 R² Score
-
-Overall fit quality
-
-Measures how much variation model explains
-
-R² Meaning:
-
-1 → Perfect
-
-0 → Useless
-
-Negative → Worse than average
-
-Example:
-If R² = 0.85
-→ Model explains 85% of variation in data.
-
-Simple meaning:
-Higher R² → Better model fit
-
-🔹 Adjusted R²
-
-Prevents fake improvement
-
-Penalizes unnecessary features
-
-If R² increases but Adjusted R² drops
-→ New feature is useless
-
-📈 Other Important Regression Metrics
-
-MAE → Average error
-
-MSE → Squared punishment
-
-RMSE → Practical error measure
-
-R² → Model strength
-
-Adjusted R² → Fair model strength
-
-MAPE → Percentage error
-
-Median Absolute Error → Robust to outliers
-
-📂 Dataset Handling
-🔹 train_test_split()
-
-Splits a single dataset into:
-
-Training data
-
-Testing data
-
-No need for separate train.csv and test.csv for small projects
+### 🔹 train_test_split()
+- Splits single dataset into:
+  - **Training data**
+  - **Testing data**
+- No need separate **train.csv** and **test.csv** for small projects
