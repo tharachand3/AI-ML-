@@ -1,61 +1,112 @@
-axis=0 → rows
-axis=1 → columns
+📌 Quick Revision Notes – Linear Regression
+🔹 Axis in Pandas
 
+axis = 0 → Rows
 
-Train and Testing ratio
-If dataset small → use 80/20
-If dataset large → even 90/10 is fine.
+axis = 1 → Columns
 
+🔹 Train and Test Split Ratio
 
-Overfitting
+If dataset is small → use 80 / 20
+
+If dataset is large → 90 / 10 is fine
+
+🔹 Overfitting
+
 Training error ↓
+
 Testing error ↑
 
+Model memorizes training data but fails on new data.
 
-Always remember:
-train_test_split returns:
+🔹 Important Rule for train_test_split()
+
+It always returns in this order:
+
 X_train
+
 X_test
+
 y_train
+
 y_test
-In that exact order.
-Never change left side order.
 
-With random_state:
-Same test set.
-Stable comparison.
+⚠ Never change the left-side order while assigning.
 
+🔹 random_state
 
-Evaluation
-MAE → average mistake
-MSE → punishment for large mistake
-R² → overall fit quality
+Fixes randomness
 
-R² tells
-1 → perfect
-0 → useless
-Negative → worse than average
+Same training and testing rows every time
+
+Gives stable comparison
+
+📊 Evaluation Metrics
+🔹 MAE (Mean Absolute Error)
+
+Average mistake
+
+Same unit as output
+
+🔹 MSE (Mean Squared Error)
+
+Squared punishment
+
+Large errors heavily penalized
+
+🔹 R² Score
+
+Overall fit quality
+
+Measures how much variation model explains
+
+R² Meaning:
+
+1 → Perfect
+
+0 → Useless
+
+Negative → Worse than average
+
+Example:
 If R² = 0.85
-Model explains 85% of variation in data.
+→ Model explains 85% of variation in data.
 
 Simple meaning:
-Higher R² → better model fit
+Higher R² → Better model fit
 
+🔹 Adjusted R²
 
-Adjusted R²----Prevents fake improvement
+Prevents fake improvement
+
+Penalizes unnecessary features
+
 If R² increases but Adjusted R² drops
-New feature is useless.
+→ New feature is useless
 
+📈 Other Important Regression Metrics
 
-MAE → average error
-MSE → squared punishment
-RMSE → practical error measure
-R² → model strength
-Adjusted R² → fair model strength
-MAPE → percentage error
-Median AE → robust to outliers
+MAE → Average error
 
+MSE → Squared punishment
 
-train_test_split() • Splits single dataset into
-Training data, Testing data
-• No need separate train.csv and test.csv
+RMSE → Practical error measure
+
+R² → Model strength
+
+Adjusted R² → Fair model strength
+
+MAPE → Percentage error
+
+Median Absolute Error → Robust to outliers
+
+📂 Dataset Handling
+🔹 train_test_split()
+
+Splits a single dataset into:
+
+Training data
+
+Testing data
+
+No need for separate train.csv and test.csv for small projects
